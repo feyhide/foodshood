@@ -6,12 +6,16 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon app.js"
   },
+  "type": "module",
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "dotenv": "^16.4.5",
     "fastify": "^4.28.1",
-    "nodemon": "^3.1.4"
+    "mongoose": "^8.6.1",
+    "nodemon": "^3.1.4",
+    "tslib": "^2.7.0"
   }
 }
