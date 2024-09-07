@@ -59,7 +59,7 @@ export const loginDeliveryPartner = async (req,res) => {
             })
         }
         
-        const isMatch = password === deliveryPartner.partner
+        const isMatch = password === deliveryPartner.password
 
         
         if(!isMatch){
@@ -69,7 +69,7 @@ export const loginDeliveryPartner = async (req,res) => {
             })
         }
         
-        const {accessToken,refreshToken} = generateToken(customer);
+        const {accessToken,refreshToken} = generateToken(deliveryPartner);
         
         return res.send({
         success:true,
@@ -152,10 +152,10 @@ export const fetchUser = async(req,res) => {
                 message:"Error getting userid"
             })
         }
-        if(decoded.role === "Customer"){
-            user = await Customer.findById(decoded.userId)
-        }else if(decoded.role === "DeliveryPartner"){
-            user = await DeliveryPartner.findById(decoded.userId)
+        if(role === "Customer"){
+            user = await Customer.findById(userId)
+        }else if(role === "DeliveryPartner"){
+            user = await DeliveryPartner.findById(userId)
         }else{
             return res.status(403).send({
                 success:false,

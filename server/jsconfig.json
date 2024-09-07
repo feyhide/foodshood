@@ -1,10 +1,13 @@
 {
     "compilerOptions": {
-        "module":"ESNext",
-        "target": "ES6",
-        "moduleResolution": "node",
-        "allowSyntheticDefaultImports": true
+      "module": "ESNext", // Good for modern module support
+      "target": "ES2020", // Consider using ES2020 or later for better async and other features
+      "moduleResolution": "node",
+      "allowSyntheticDefaultImports": true,
+      "resolveJsonModule": true, // Enables importing JSON modules
+      "esModuleInterop": true // Ensures compatibility with CommonJS modules
     },
     "exclude": ["node_modules"],
     "include": ["src"]
-}
+  }
+  
